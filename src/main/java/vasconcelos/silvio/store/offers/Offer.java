@@ -6,7 +6,7 @@ import java.util.List;
 
 public sealed abstract class Offer permits ApplesOffer, SoupOffer {
 
-    private boolean isActive;
+    private final boolean isActive;
 
     protected Offer(boolean isActive) {
         this.isActive = isActive;
@@ -17,13 +17,5 @@ public sealed abstract class Offer permits ApplesOffer, SoupOffer {
 
     public boolean isActive() {
         return isActive;
-    }
-
-    public void activate() {
-        isActive = true;
-    }
-
-    public void deactivate() {
-        isActive = false;
     }
 }

@@ -11,13 +11,13 @@ public final class SoupOffer extends Offer {
 
     private final static int PRICE_BREAD_REDUCTION = Product.BREAD.getPrice().amount() / 2;
 
-    protected SoupOffer(boolean isActive) {
+    public SoupOffer(boolean isActive) {
         super(isActive);
     }
 
     @Override
     public Discount getDiscount(List<Product> products) {
-        //Possiblement utiliser l'api gatherer
+        //Possiblement utiliser l'api gatherer un doute
         Map<Boolean, List<Product>> collect = products.stream()
                 .filter(List.of(Product.SOUP, Product.BREAD)::contains)
                 .collect(Collectors.partitioningBy(product -> product.equals(Product.SOUP)));
